@@ -47,16 +47,28 @@ with open(file_to_load) as election_data:
         # Print the candidate name from each row.
         candidate_name = row[2]
 
-        # Find Unique candidae names.
+        # Find unique candidae names.
         if candidate_name not in candidate_options:
             # Add it to the list of candidates.
             candidate_options.append(candidate_name)
 
-            # Initialze candidate vote count.
+            # Initialze candidate vote dictionary and count.
             candidate_votes[candidate_name] = 0
         # Add a vote to that candidate's count.
         candidate_votes[candidate_name] += 1
     
+with open(file_to_save, "w") as txt_file:
+# Print the final vote count to the terminal.
+    election_results = (
+        f"\nElection Results\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n")
+    print(election_results, end="")
+    # Save the final vote count to the text file.
+    txt_file.write(election_results)
+
+
     # Determine the percentage of votes for each candidate by looping through the counts.
     # Iterate through the candidate list.
 
@@ -70,7 +82,11 @@ with open(file_to_load) as election_data:
 
         # Print out each candidate's name, vote count, and percentage of
         # votes to the terminal
-        print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        candidate_results =(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        # Print each candidate, their voter count, and percentage to the terminal.
+        print(candidate_results)
+        #  Save the candidate results to our text file.
+        txt_file.write(candidate_results)
 
         # Determine winning vote count and candidate
         # Determine if the votes is greater than the winning count.
@@ -90,6 +106,7 @@ with open(file_to_load) as election_data:
         f"Winning Percentage: {winning_percentage:.1f}%\n"
         f"-------------------------\n")
     print(winning_candidate_summary)
+    txt_file.write(winning_candidate_summary)
 
 # Print the total votes.
 # print(total_votes)
