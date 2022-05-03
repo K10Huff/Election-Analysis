@@ -46,7 +46,7 @@ The purpose of this project was to analyze the election results of a local congr
 ### Winner of the Election:
 * The winner of the election was Diana DeGette who received 73.8% of the votes with 272,892 total votes.
 
-![Election_Results](election_results.png)
+![Election_Results](https://github.com/K10Huff/Election-Analysis/blob/f0250751cf2f573479bd1db64d75ca5f9a6f0cd2/Resources/election_results.png)
 
 ## **Election-Audit Summary**
 This script can be modified to count any item by category not just candidates. 
