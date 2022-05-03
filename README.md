@@ -46,6 +46,8 @@ The purpose of this project was to analyze the election results of a local congr
 ### Winner of the Election:
 * The winner of the election was Diana DeGette who received 73.8% of the votes with 272,892 total votes.
 
+![Election_Results](election_results.png)
+
 ## **Election-Audit Summary**
 This script can be modified to count any item by category not just candidates. 
 
@@ -60,3 +62,5 @@ This script can be modified to count any item by category not just candidates.
       
         # Add a count to that item’s count
         item_votes[item_name] += 1
+
+The script can also be modified for a style of election where voters assign a ranking number to the candidates and the program sums the scores of the candiates in the lists instead of just adding tally one per vote.
